@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{66B9827F-A32D-4724-9E96-468E06F03373}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Asphalt.Controls</RootNamespace>
+    <AssemblyName>Asphalt.Controls</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;ASPHALT_DESIGN</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AsphaltBusyBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AsphaltCollection.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AsphaltColourWheel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AsphaltContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AsphaltDropDown.cs" />
+    <Compile Include="AsphaltEnum.cs" />
+    <Compile Include="AsphaltForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AsphaltIconAdornment.cs" />
+    <Compile Include="AsphaltPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AsphaltPanelButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AsphaltPanelShading.cs" />
+    <Compile Include="AsphaltScroller.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AsphaltScrollerShading.cs" />
+    <Compile Include="AsphaltTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AsphaltTrack.cs" />
+    <Compile Include="Colour.cs" />
+    <Compile Include="EditorPropertyCopier.cs" />
+    <Compile Include="EditorPropertyCopier.Designer.cs">
+      <DependentUpon>EditorPropertyCopier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditorPropertyStripper.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Native.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Theme.cs" />
+    <Compile Include="Toolkit.TypedCollection.cs" />
+    <Compile Include="Utils.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Asphalt.Fonts\Asphalt.Fonts.csproj">
+      <Project>{32695bfd-aa28-4afe-9007-3c97bb9507ea}</Project>
+      <Name>Asphalt.Fonts</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AsphaltColourWheel.resx">
+      <DependentUpon>AsphaltColourWheel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditorPropertyCopier.resx">
+      <DependentUpon>EditorPropertyCopier.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
